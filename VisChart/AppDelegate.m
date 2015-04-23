@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DemoListViewController.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    DemoListViewController *vc = [[DemoListViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    _window.rootViewController = nvc;
+    [_window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }
